@@ -20,13 +20,20 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=45, null=True)),
                 ('author', models.ForeignKey(related_name='entries', to=settings.AUTH_USER_MODEL)),
             ],
+            options={
+                'verbose_name_plural': 'entries',
+            },
         ),
         migrations.CreateModel(
             name='Tag',
             fields=[
                 ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
                 ('name', models.CharField(max_length=45)),
-                ('tags', models.ManyToManyField(to='blog.Entry')),
             ],
+        ),
+        migrations.AddField(
+            model_name='entry',
+            name='tags',
+            field=models.ManyToManyField(to='gameGap.Tag'),
         ),
     ]
