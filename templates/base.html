@@ -2,25 +2,17 @@
 <html ng-app="gameGap">
 <head>
   {% verbatim %}
-  <title> {{ title }} </title>
+  <title id="title">&lrm;</title>
   {% endverbatim %}
 
   <base href="#/" />
 
   {% include 'stylesheets.html' %}
-<style>
-body {
-  background-color: #52D152;  
-}
 
-.unicorn {
-  color: white;
-}
-
-</style>
 </head>
 
-<body>
+<body ng-controller="mainController as mc">
+
  <nav class="navbar navbar-inverse" role="navigation" >
     <divs>
         <div class="navbar-header">
@@ -30,14 +22,16 @@ body {
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Game_Gap</a>
+            <a class="navbar-brand" href="#/">Game_Gap</a>
         </div>
         <!-- ./navbar-header -->
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav pull-right unicorn">
-            <li><a href="/#/top_games">Top Games</a></li>
-            <li><a href="/#/new_games">New Games</a></li>
-            <li><a href="/#/genres">Genres</a></li>
+            <li><a href="/#/top_free">Top Free Games</a></li>
+            <li><a href="/#/top_paid">Top Paid Games</a></li>
+            <li><a href="/#/top_grossing">Top Grossing Games</a></li>
+            <li><a href="/#/top_new_free">Top New Free Games </a></li>
+            <li><a href="/#/top_new_paid">Top New Paid Games</a></li>
           </ul>
         </div>
         <!-- /.collapse.navbar-collapse -->

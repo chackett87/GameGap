@@ -1,17 +1,10 @@
-{% load compress %}
 {% load static %}
 
-    <!-- Angular -->
 <script src="{% static 'gameGap/js/lib/angular.min.js' %}"></script>
 <script src="{% static 'gameGap/js/lib/angular-route.min.js' %}"></script>
 
-    <!-- Everything else -->
 <script src="{% static 'gameGap/js/ourAngular.js' %}"></script>
 <script src="{% static 'gameGap/js/controllers/mainController.js' %}"></script>
 
-<!-- BootStrap -->
-
 <script src="{% static 'gameGap/bootstrap/js/ui-bootstrap.min.js' %}"></script>
 
-{% compress js %}
-{% endcompress %}

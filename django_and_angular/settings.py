@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'gameGap',
     'rest_framework',
-    'compressor',
 )
 
 MIDDLEWARE_CLASSES = (

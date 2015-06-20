@@ -4,27 +4,34 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
             templateUrl: '/static/gameGap/views/index.html',
-            controller: 'mainController',
-            title: 'Home'
+            title: 'Home',
         })
-        .when('/top_games', {
-            templateUrl: '/static/gameGap/views/top_games.html',
-            controller: 'mainController',
-            title: 'Top Games'
+        .when('/top_free', {
+            templateUrl: '/static/gameGap/views/top_free.html',
+            title: 'Top Free Games'
         })
-        .when('/new_games', {
-            templateUrl: '/static/gameGap/views/new_games.html',
-            controller: 'mainController',
-            title: 'New Games'
+        .when('/top_paid', {
+            templateUrl: '/static/gameGap/views/top_paid.html',
+            title: 'Top Paid Games'
         })
-        .when('/genres', {
-            templateUrl: '/static/gameGap/views/genres.html',
-            controller: 'mainController',
-            title: 'Genres'
+        .when('/top_grossing', {
+            templateUrl: '/static/gameGap/views/top_grossing.html',
+            title: 'Top Grossing Games'
+        })
+        .when('/top_new_free', {
+            templateUrl: '/static/gameGap/views/top_new_free.html',
+            title: 'Top New Free Games',
+            controller:
+            controllerAs:
+        }) 
+        .when('/top_new_paid', {
+            templateUrl: '/static/gameGap/views/top_new_paid.html',
+            title: 'Top New Paid Games'
+            // pageFunction: ''
+
         })
         .when('/NOTHINGHERE', {
             templateUrl: '/static/gameGap/views/nothing.html',
-            controller: 'mainController',
             title: 'Error'
         })
         .otherwise({
@@ -35,8 +42,10 @@ app.config(['$routeProvider', function($routeProvider) {
 app.run(['$location', '$rootScope', function($location, $rootScope) {
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
     if(current.$$route){
-      $rootScope.title = current.$$route.title;
-      console.log(current);
+      document.getElementById('title').innerHTML = current.$$route.title;
+    }
+    if(current.$$route.pageFunction){
+        console.log(current.$$route.pageFunction);
     }
   })
 }])
