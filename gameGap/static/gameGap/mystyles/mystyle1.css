@@ -12,7 +12,9 @@ img.thumbnails {
 
 .app-items {
   display: inline-block;
-  width: 250px;
+  width: 300px;
+  height: 110px;
+  overflow: hidden;
 }
 
 .app-item {
