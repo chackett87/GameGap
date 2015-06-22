@@ -6,3 +6,49 @@ body {
   color: white;
 }
 
+img.thumbnails {
+  vertical-align: top;
+}
+
+.app-items {
+  display: inline-block;
+  width: 250px;
+}
+
+.app-item {
+  display: inline-block;
+  width: 300px;
+  margin-bottom: 20px;
+  float: left;
+}
+
+.app-content {
+  display: inline-block;
+  padding-left: 15px;
+  width: 200px;
+}
+
+.app-content p {
+  width: auto;
+}
+
+.app-title {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.app-category {
+  font-size: 12px;
+  display: inline-block;
+  font-weight: bold;
+}
+
+.app-category-type {
+  font-size: 11px;
+  display: inline-block;
+}
+
+.app-price {
+  font-weight: bold;
+  color: #000000;
+}

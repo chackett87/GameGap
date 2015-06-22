@@ -8,27 +8,33 @@ app.config(['$routeProvider', function($routeProvider) {
         })
         .when('/top_free', {
             templateUrl: '/static/gameGap/views/top_free.html',
-            title: 'Top Free Games'
+            title: 'Top Free Games',
+            controller: 'topFreeController',
+            controllerAs: 'mc'
         })
         .when('/top_paid', {
             templateUrl: '/static/gameGap/views/top_paid.html',
-            title: 'Top Paid Games'
+            title: 'Top Paid Games',
+            controller: 'topPaidController',
+            controllerAs: 'mc'
         })
         .when('/top_grossing', {
             templateUrl: '/static/gameGap/views/top_grossing.html',
-            title: 'Top Grossing Games'
+            title: 'Top Grossing Games',
+            controller: 'topGrossingController',
+            controllerAs: 'mc'
         })
         .when('/top_new_free', {
             templateUrl: '/static/gameGap/views/top_new_free.html',
             title: 'Top New Free Games',
-            controller:
-            controllerAs:
+            controller: 'topNewFreeController',
+            controllerAs: 'mc'
         }) 
         .when('/top_new_paid', {
             templateUrl: '/static/gameGap/views/top_new_paid.html',
-            title: 'Top New Paid Games'
-            // pageFunction: ''
-
+            title: 'Top New Paid Games',
+            controller: 'topNewPaidController',
+            controllerAs: 'mc'
         })
         .when('/NOTHINGHERE', {
             templateUrl: '/static/gameGap/views/nothing.html',

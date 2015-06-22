@@ -1,6 +1,13 @@
-<h1>Top Games</h1>
-<section>
-  <nav>
-    <div>Most Popular</div>
-    <div>Best Selling</div>
-    {{ mc.z }}
+<div class="row">  
+  <div class="app-items col-md-3" ng-repeat="game in mc.games">
+    <div class="app-item">
+      <img class="thumbnails" src="{{game.icon_72}}">
+      <div class="app-content">
+        <p class="app-title">{{game.title}}</p>
+        <p class="app-category">Category:</p>
+          <p class="app-category-type">{{game.category}}</p>
+        <p class="app-price">Free</p>
+      </div>
+    </div>
+  </div>
+</div>
