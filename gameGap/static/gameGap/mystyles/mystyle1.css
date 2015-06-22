@@ -1,11 +1,10 @@
 body {
-  background-color: #52D152;  
+  background: #F7F5FF;  
 }
 
 .unicorn {
   color: white;
 }
-
 
 img.thumbnails {
   vertical-align: top;
@@ -58,5 +57,5 @@ img.thumbnails {
 
 .app-price {
   font-weight: bold;
-  color: #000000;
+  color: #a5bf55;
 }
