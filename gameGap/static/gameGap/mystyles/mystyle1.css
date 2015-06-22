@@ -6,8 +6,14 @@ body {
   color: white;
 }
 
+
 img.thumbnails {
   vertical-align: top;
+}
+
+.thumbnails:hover {
+  color: #730B0B;
+  cursor: pointer;
 }
 
 .app-items {
