@@ -2,6 +2,11 @@ body {
   background: #F7F5FF;  
 }
 
+.intro-logo {
+  height: auto;
+  width: auto;
+}
+
 .unicorn {
   color: white;
 }

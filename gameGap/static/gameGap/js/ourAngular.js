@@ -1,3 +1,5 @@
+'use strict';
+
 var app = angular.module('gameGap', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {

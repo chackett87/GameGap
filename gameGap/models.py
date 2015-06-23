@@ -9,17 +9,18 @@ class Tag(models.Model):
         return self.name
 
 
-class Entry(models.Model):
-    author = models.ForeignKey(User, related_name='entries')
-    body = models.TextField()
-    title = models.CharField(max_length=45, null=True)
-    tags = models.ManyToManyField(Tag)
+# class Entry(models.Model):
+#     author = models.ForeignKey(User, related_name='entries')
+#     body = models.TextField()
+#     title = models.CharField(max_length=45, null=True)
+#     tags = models.ManyToManyField(Tag)
 
-    class Meta:
-        verbose_name_plural = 'entries'
+#     class Meta:
+#         verbose_name_plural = 'entries'
 
-    def __str__(self):
-        if self.title:
-            return self.title
-        else:
-            return '{}...'.format(self.body[:20])
+#     def __str__(self):
+#         if self.title:
+#             return self.title
+#         else:
+#             return '{}...'.format(self.body[:20])
+
