@@ -4,6 +4,10 @@ var app = angular.module('gameGap', ['ngRoute']);
 
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
+        .when('/posts', {
+            templateUrl: '/static/gameGap/views/post.html',
+            title: 'Posts',
+        })
         .when('/', {
             templateUrl: '/static/gameGap/views/index.html',
             title: 'Home',

@@ -1,7 +1,9 @@
 <div class="row">  
   <div class="app-items col-md-3" ng-repeat="game in mc.games">
     <div class="app-item">
-      <img class="thumbnails" src="{{game.icon_72}}">
+      <a href="/#/posts">
+        <img class="thumbnails" src="{{game.icon_72}}">
+      </a>
       <div class="app-content">
         <p class="app-title">{{game.title}}</p>
         <p class="app-category">Category:</p>
