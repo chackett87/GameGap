@@ -5,7 +5,7 @@ app.controller('postController', function($http, posts) {
   var self = this;
 
   posts().then(function (posts) {
-    self.posts = posts;
+    self.posts = posts.reverse();
   });
   var urlTitle = "http://127.0.0.1:8000/posts/entries/";
   var urlComment = "http://127.0.0.1:8000/comment/comments/";
