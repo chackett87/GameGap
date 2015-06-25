@@ -3,7 +3,7 @@
      <div class="app-items col-xs-12 col-sm-4 col-md-3" ng-repeat="game in mc.games">
       <div class="app-item">
         <!-- <a href="/#/posts"> -->
-        <div ng-click="mc.showModal()">
+        <div ng-click="mc.showModal(game)">
           <img class="thumbnails" src="{{game.icon_72}}">
         <div class="app-content">
           <p class="app-title">{{game.title}}</p>
@@ -22,15 +22,18 @@
 <div id="openModal" class=" modalDialog row" ng-class="{showModal: mc.formEntry}">
     <div class="modalHolder col-md-12">
         <a title="Close" class="close" ng-click="mc.hideModal()">X</a>
-        <form class="col-md-12" ng-submit="mc.addComment()">
+        <form class="col-md-12" ng-submit="mc.addNewDiscussion()">
+          <h1 class="modal-header">Post and Play!</h1>
           <div class="full-form">
             <div class="form-fields">
-              Post Title: <input type="text" ng-model="mc.addPost"><br>
-              Topic Field: <input type="text" ng-model="mc.addComment"><br>  
-            </div>
+              <label for="topic">Topic:</label>
+              <input class="form-inserts" name="topic" type="text" ng-model="mc.addTopic"><br>  
+              <label for="comment">Post Content:</label> 
+              <textarea  class="form-inserts" name="comment" ng-model="mc.addPost"></textarea><br>     
             <span>
-              <button type="submit">Submit</button>
+              <button class="form-submit" type="submit">Submit</button>
             </span>
+            </div>
           </div>
         </form>
     </div>

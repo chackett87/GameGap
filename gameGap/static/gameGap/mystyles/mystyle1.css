@@ -136,6 +136,7 @@ img.thumbnails {
 }
 
 /*Modal CSS*/
+
 .modalDialog {
   position: fixed;
   font-family: Arial, Helvetica, sans-serif;
@@ -180,10 +181,36 @@ img.thumbnails {
 
 .close:hover { background: #00d9ff; }
 
+/*Modal Pop Up CSS for form*/
+.modalDialog > div {
+  background-color: #ECD3AB;
+}
 
+.form-fields {
+  background-color: rgba(81, 179, 218, 0.76);
+  border-radius: 2px;
+  padding: 10px;
+}
 
+.form-inserts {
+  margin-left: 5%;
+  width: 60%;
+}
 
+.modal-header {
+  text-align: center;
+  color: #302B2B;
+  border: none;
+}
 
+label {
+  width: 15%;
+}
+
+.form-submit {
+  margin-left: 40%;
+  width: 20%;
+}
 
 
 

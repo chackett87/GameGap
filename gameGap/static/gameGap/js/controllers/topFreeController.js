@@ -3,39 +3,33 @@
 app.controller('topFreeController', function($http) {
   var self = this;
 
-  var urlGet = "https://42matters.com/api/1/apps/top_google_charts.json?callback=JSON_CALLBACK&list_name=topselling_free&cat_key=GAMES&country=US&limit=6&access_token=7c2b7cd2d6913e3f2337770aa9f9efdee27913e3";   
+  var urlGet = "https://42matters.com/api/1/apps/top_google_charts.json?callback=JSON_CALLBACK&list_name=topselling_free&cat_key=GAMES&country=US&limit=6&access_token=ca533a7a14658fbd32ecd9fb9718f3f96e7c43ad";   
   var responsePromise = $http.jsonp(urlGet);
-  var urlPost = "http://127.0.0.1:8000/posts/entries/";
+  var urlTitle = "http://127.0.0.1:8000/posts/entries/";
   var urlComment = "http://127.0.0.1:8000/comment/comments/";
 
   self.formEntry = false;
 
-  self.showModal = function(){
+  self.showModal = function(elem){
       self.formEntry = true;
+      // console.log(elem)
+      self.gameName = elem.title;
+      self.addTopic = self.gameName;
   };
   self.hideModal = function(){
       self.formEntry = false;
   }
-  
-  self.addTitle = function() {
-    // var postTitle = {'title':self.addPost};
-    var postTitle = {'title':'yayaya'};
-    $http.post(urlPost, postTitle)
+  self.addNewDiscussion = function() {
+    var topic = {'title':self.addTopic};
+    
+    $http.post(urlTitle, topic)
     .then(function(response){
-      console.log(response);
+      var comment = {'body':self.addPost, 'post':response.data.id};
+      $http.post(urlComment, comment)
+      .then(function(response){console.log(response);}, function(response){console.log(response);});
     });
+    self.hideModal();
   };
-
-  self.addInformation = function() {
-    // var commentInformation = {'body':self.addComment};
-    var commentInformation = {'body':'jasdfjsdfsadlfj'};
-    $http.post(urlComment, commentInformation)
-    .then(function(response){
-      console.log(response);
-    });
-  };
-
-  self.addInformation();
 
   self.games = []; 
   responsePromise.success(function(data) {
