@@ -1,5 +1,7 @@
 <section class="background-container">
-  <button class="make-new-post">Create a Post</button>
+  <div ng-click="pc.showModal(game)">
+    <button class="make-new-post">Create a Post</button>
+  </div>
   <h1 class="game-post-header">Game Posts</h1>
   <section class="game-post-tile">
     <div class="post-information">
@@ -23,6 +25,26 @@
     </div>
   </section>
 </section> 
+
+<div id="openModal" class=" modalDialog row" ng-class="{showModal: pc.formEntry}">
+    <div class="modalHolder col-md-12">
+        <a title="Close" class="close" ng-click="pc.hideModal()">X</a>
+        <form class="col-md-12" ng-submit="pc.addNewDiscussion()">
+          <h1 class="modal-header">Post and Play!</h1>
+          <div class="full-form">
+            <div class="form-fields">
+              <label for="topic">Topic:</label>
+              <input class="form-inserts" name="topic" type="text" ng-model="pc.addTopic"><br>  
+              <label for="comment">Post Content:</label> 
+              <textarea  class="form-inserts" name="comment" ng-model="pc.addPost"></textarea><br>     
+            <span>
+              <button class="form-submit" type="submit">Submit</button>
+            </span>
+            </div>
+          </div>
+        </form>
+    </div>
+</div>
 
 
 
