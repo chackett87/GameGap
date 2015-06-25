@@ -2,11 +2,16 @@
 
 var app = angular.module('gameGap', ['ngRoute']);
 
-app.config(['$routeProvider', function($routeProvider) {
+app.config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
+    $httpProvider.defaults.xsrfCookieName = 'csrftoken';
+    $httpProvider.defaults.xsrfHeaderName = 'X-CSRFToken';
+    
     $routeProvider
         .when('/posts', {
             templateUrl: '/static/gameGap/views/post.html',
             title: 'Posts',
+            controller: 'postController',
+            controllerAs: 'pc'
         })
         .when('/', {
             templateUrl: '/static/gameGap/views/index.html',

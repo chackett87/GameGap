@@ -1,6 +1,37 @@
-<form ng-submit="submitPost()">
-  <input type="text" ng-model="post.title" />
-  <input type="text" ng-model="post.subject" />
-  <input type="submit" value="Add Post" />
-</form>
-Post: {{post}}
+<section class="background-container">
+  <h1 class="game-post-header">Game Posts</h1>
+  <section class="game-post-tile">
+    <div class="post-information">
+      <span>Post Title</span>
+      <span>Date</span>
+    </div>
+    <div ng-repeat="post in pc.posts track by post.id">
+      <div class="game-post-title">
+        <p>
+          <span>{{ post.title }}</span>
+          <span class="game-post-time">{{ post.date | date: 'shortDate' : '-0800' }}</span>
+        </p>
+        <section ng-repeat="comment in post.comments track by comment.id">
+          <div class="comment-body">
+            <span>{{ comment.body }}</span>
+            <span>{{ comment.date | date: "h:mma 'at' MM/dd/yyyy" }}</span>
+          </div>
+        </section>
+      </div>
+      <br>
+    </div>
+  </section>
+</section> 
+
+
+
+
+
+
+
+
+
+
+
+
+

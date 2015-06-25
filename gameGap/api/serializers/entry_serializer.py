@@ -1,7 +1,11 @@
 from rest_framework import serializers
-from gameGap.models import Entry
+from gameGap.models import Post, Comment
 
 
-class EntrySerializer(serializers.ModelSerializer):
+class PostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Entry
+        model = Post
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment

@@ -1,3 +1,5 @@
+'use strict';
+
 app.controller('topPaidController', function($http) {
   var self = this;
 

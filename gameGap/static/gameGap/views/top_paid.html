@@ -1,14 +1,16 @@
-<div class="row">  
-  <div class="app-items col-md-3" ng-repeat="game in mc.games">
-    <div class="app-item">
-      <a href="/#/posts">
-        <img class="thumbnails" src="{{game.icon_72}}">
-      </a>
-      <div class="app-content">
-        <p class="app-title">{{game.title}}</p>
-        <p class="app-category">Category:</p>
-          <p class="app-category-type">{{game.category}}</p>
-        <p class="app-price">{{game.price}}</p>
+<div class="background-container">
+  <div class="row">  
+     <div class="app-items col-xs-12 col-sm-4 col-md-3" ng-repeat="game in mc.games">
+      <div class="app-item">
+        <a href="/#/posts">
+          <img class="thumbnails" src="{{game.icon_72}}">
+        </a>
+        <div class="app-content">
+          <p class="app-title">{{game.title}}</p>
+          <p class="app-category">Category:</p>
+            <p class="app-category-type">{{game.category}}</p>
+          <p class="app-price">{{game.price}}</p>
+        </div>
       </div>
     </div>
   </div>
